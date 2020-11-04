@@ -1,6 +1,6 @@
 
     <nav class="navbar navbar-expand-md bg-dark navbar-light navbar-toggleable">
-        <a href="#" class="navbar-brand"><i class="material-icons md-48">store</i></a>
+        <a href="/" class="navbar-brand"><i class="material-icons md-48">store</i></a>
         <button class="navbar-toggle navbar-toggler bg-light" data-toggle="collapse" data-target="#navbar">
             <span class="navbar-toggle navbar-toggler-icon navbar-dark"></span>
         </button>
@@ -11,11 +11,10 @@
                         Categories
                     </a>
                     <div class="dropdown-menu">
-                        <a href="" class="dropdown-item text-dark">Category1</a>
-                        <a href="" class="dropdown-item text-dark">Category2</a>
-                        <a href="" class="dropdown-item text-dark">Category3</a>
-                        <a href="" class="dropdown-item text-dark">Category4</a>
-                        <a href="" class="dropdown-item text-dark">Category5</a>
+                        <a href="{% url 'home' %}" class="dropdown-item text-dark">ALL PRODUCTS</a>
+                        {% for category in links %}
+                            <a href="{{category.get_url}}" class="dropdown-item text-dark">{{category.name}}</a>
+                        {% endfor %}
                     </div>
                 </li>
                 <li class="nav-item text-uppercase px-3"><a class="nav-link text-light" href="{% url 'product' %}">Contacts</a></li>
