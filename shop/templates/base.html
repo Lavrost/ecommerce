@@ -17,6 +17,7 @@
 
 
       <style type="text/css">
+        body { background: #f8f8f8; }
         .material-icons.md-48 { font-size: 48px; color: #F0FFF0; }
         .material-icons.md-24 { font-size: 24px; color:#000000; }
         #btn-search {  }
@@ -26,45 +27,14 @@
     <title>{% block title %}  {% endblock %}</title>
   </head>
   <body>
+    {% include 'navbar.html' %}
 
-<!-- TODO: navbar-toggler-icon отображается некоррктно -->
-
-    <nav class="navbar navbar-expand-md bg-dark navbar-toggleable">
-        <a href="#" class="navbar-brand"><i class="material-icons md-48">store</i></a>
-        <button class="navbar-toggle navbar-toggler bg-light" data-toggle="collapse" data-target="#navbar">
-            <span class="navbar-toggle navbar-toggler-icon navbar-dark"></span>
-        </button>
-        <div id="navbar" class="collapse navbar-collapse justify-content-between">
-            <ul class="navbar-nav">
-                <li class="nav-item text-uppercase px-3">
-                    <a class="nav-link  dropdown-toggle" href="{% url 'about' %}" data-toggle="dropdown">
-                        Categories
-                    </a>
-                    <div class="dropdown-menu">
-                        <a href="" class="dropdown-item">Category1</a>
-                        <a href="" class="dropdown-item">Category2</a>
-                        <a href="" class="dropdown-item">Category3</a>
-                        <a href="" class="dropdown-item">Category4</a>
-                        <a href="" class="dropdown-item">Category5</a>
-                    </div>
-                </li>
-                <li class="nav-item text-uppercase px-3"><a class="nav-link" href="{% url 'about' %}">Contacts</a></li>
-                <li class="nav-item text-uppercase px-3"><a class="nav-link" href="{% url 'about' %}">About</a></li>
-            </ul>
-            <form class="form-inline">
-                <div class="input-group">
-                    <input type="text" placeholder="Search">
-                    <div>
-                        <button id="btn-search"><i class="material-icons md-24">search</i></button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </nav>
 
     {% block content %}
     {% endblock %}
 
+
+    {% include 'footer.html' %}
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->

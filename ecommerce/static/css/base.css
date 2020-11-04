@@ -1,3 +1,29 @@
 body {
-    background: #F8F8F8;
+    background: #f8f8f8;
+}
+
+.product_title {
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+.material-icons.md-48 {
+    font-size: 48px;
+    color: #F0FFF0;
+}
+
+.material-icons.md-24 {
+    font-size: 24px;
+    color:#000000;
+}
+
+#btn-search {
+
+}
+
+.nav-link {
+    color: #F0FFF0;
 }
