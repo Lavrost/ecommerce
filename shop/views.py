@@ -15,3 +15,7 @@ def home(request, category_slug=None):
 
 def product(request):
     return render(request, 'product.html')
+
+
+def cart(request):
+    return render(request, 'cart.html')
