@@ -17,8 +17,19 @@
                         {% endfor %}
                     </div>
                 </li>
-                <li class="nav-item text-uppercase px-3"><a class="nav-link text-light" href="{% url 'product' %}">Contacts</a></li>
-                <li class="nav-item text-uppercase px-3"><a class="nav-link text-light" href="{% url 'product' %}">About</a></li>
+                <li class="nav-item text-uppercase px-3">
+                    <a class="nav-link text-light" href="{% url 'product' %}">Contacts</a>
+                </li>
+                <li class="nav-item text-uppercase px-3">
+                    <a class="nav-link text-light" href="{% url 'product' %}">About</a>
+                </li>
+                {% if item_count > 0 %}
+                <li class="nav-item text-uppercase px-3">
+                    <a class="nav-link text-light" href="{% url 'cart_detail' %}">
+                        <i class="material-icons cart_icon">add_shopping_cart</i>({{ item_count }})
+                    </a>
+                </li>
+                {% endif %}
             </ul>
             <form class="form-inline">
                 <div class="input-group">

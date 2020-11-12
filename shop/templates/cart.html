@@ -9,8 +9,8 @@
 
 {% if not cart_items %}
 
-    <h2>Your cart is empty</h2>
-    <a href="{% url 'home' %}">Go to home</a>
+    <h2 class="text-center">Your cart is empty</h2>
+    <p class="text-center">Go to <a href="{% url 'home' %}">home</a> </p>
 
 {% else %}
 
@@ -51,14 +51,24 @@
                         </td>
                         {% if cart_item.quantity < cart_item.product.stock %}
                         <td>
-                            <a href="{% url 'add_cart' cart_item.product.id %}"><i class="material-icons cart_icon">add_shopping_cart</i></a>
-                            <a href=""><i class="material-icons cart_icon">remove_circle_outline</i></a>
-                            <a href=""><i class="material-icons cart_icon">delete</i></a>
+                            <a href="{% url 'add_cart' cart_item.product.id %}">
+                                <i class="material-icons cart_icon">add_shopping_cart</i>
+                            </a>
+                            <a href="{% url 'cart_remove' cart_item.product.id %}">
+                                <i class="material-icons cart_icon">remove_circle_outline</i>
+                            </a>
+                            <a href="{% url 'cart_remove_product' cart_item.product.id %}">
+                                <i class="material-icons cart_icon">delete</i>
+                            </a>
                         </td>
                         {% else %}
                         <td>
-                            <a href=""><i class="material-icons cart_icon">remove_circle_outline</i></a>
-                            <a href=""><i class="material-icons cart_icon">delete</i></a>
+                            <a href="{% url 'cart_remove' cart_item.product.id %}">
+                                <i class="material-icons cart_icon">remove_circle_outline</i>
+                            </a>
+                            <a href="{% url 'cart_remove_product' cart_item.product.id %}">
+                                <i class="material-icons cart_icon">delete</i>
+                            </a>
                         </td>
                         {% endif %}
                     </tr>
