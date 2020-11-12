@@ -27,3 +27,8 @@ body {
 .nav-link {
     color: #F0FFF0;
 }
+
+.errorlist li {
+    color: red;
+    font-weight: bold;
+}
